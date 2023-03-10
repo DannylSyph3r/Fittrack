@@ -26,18 +26,7 @@ class _CompleteUserProfileScreenState extends State<CompleteUserProfileScreen> {
   final _dateOfBirthController = TextEditingController();
   final _userBodyWeightController = TextEditingController();
   final _userHeightController = TextEditingController();
-  //late SharedPreferences _prefs;
-
-  //  @override
-  // void initState() {
-  //   super.initState();
-  //   _initPreferences();
-  // }
-
-  //  void _initPreferences() async {
-  //   _prefs = await SharedPreferences.getInstance();
-  // }
-
+  
   @override
   void dispose() {
     _dateOfBirthController.dispose();
@@ -283,8 +272,8 @@ class _CompleteUserProfileScreenState extends State<CompleteUserProfileScreen> {
                             user.email,
                             selectedGender,
                             _dateOfBirthController.text,
-                            _userBodyWeightController.text.trim(),
                             _userHeightController.text.trim(),
+                            _userBodyWeightController.text.trim(),
                             _selectedChoice,
                             context);
                         // After adding complete profile details, navigate to SignUpWelcomeScreen
@@ -292,7 +281,7 @@ class _CompleteUserProfileScreenState extends State<CompleteUserProfileScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => SignUpWelcomeScreen()));
+                                builder: (context) => const SignUpWelcomeScreen()));
                       } else {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(

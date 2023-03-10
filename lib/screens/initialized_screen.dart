@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fittrack/auth/auth_page.dart';
 import 'package:fittrack/screens/complete_profile_screen.dart';
+import 'package:fittrack/screens/loading_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'home_screen_fittrack.dart';
@@ -46,9 +47,9 @@ class InitializedScreen extends StatelessWidget {
                       }
                     } else {
                       // Still loading profile data, show loading indicator
-                      return const Scaffold(
+                      return Scaffold(
                         body: Center(
-                          child: CircularProgressIndicator(),
+                          child: LoadingScreen(),
                         ),
                       );
                     }
@@ -57,9 +58,9 @@ class InitializedScreen extends StatelessWidget {
               }
             } else {
               // Still loading authentication state, show loading indicator
-              return const Scaffold(
+              return Scaffold(
                 body: Center(
-                  child: CircularProgressIndicator(),
+                  child: LoadingScreen(),
                 ),
               );
             }
