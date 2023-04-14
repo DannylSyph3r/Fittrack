@@ -18,16 +18,10 @@ class _BMICardWidgetState extends State<BMICardWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 146,
+      height: 150,
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
-          image: const DecorationImage(
-              image: AssetImage('assets/images/bmi_banner_dots.png'),
-              fit: BoxFit.cover),
-          gradient: const LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [Color.fromARGB(255, 2, 137, 247), Colors.purple]),
+          color: CustomColors.settingsCardColor,
           borderRadius: BorderRadius.circular(20)),
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         Padding(
@@ -62,7 +56,6 @@ class _BMICardWidgetState extends State<BMICardWidget> {
                           cardWidgetBmi.toStringAsFixed(1),
                           style: const TextStyle(
                               fontSize: 36,
-                              color: Colors.white,
                               fontWeight: FontWeight.w500),
                         );
                       } else {
@@ -94,7 +87,7 @@ class _BMICardWidgetState extends State<BMICardWidget> {
                     final double cardBmiIndication =
                         weight / pow(height / 100, 2);
                     if (cardBmiIndication < 18.5) {
-                     return Row(
+                      return Row(
                         children: [
                           Container(
                             width: 10,
@@ -107,7 +100,7 @@ class _BMICardWidgetState extends State<BMICardWidget> {
                           const SizedBox(width: 6),
                           const Text(
                             'Underweight',
-                            style: TextStyle(fontSize: 13, color: Colors.white),
+                            style: TextStyle(fontSize: 13),
                           ),
                         ],
                       );
@@ -126,7 +119,7 @@ class _BMICardWidgetState extends State<BMICardWidget> {
                           const SizedBox(width: 6),
                           const Text(
                             'Healthy',
-                            style: TextStyle(fontSize: 13, color: Colors.white),
+                            style: TextStyle(fontSize: 13),
                           ),
                         ],
                       );
@@ -145,7 +138,7 @@ class _BMICardWidgetState extends State<BMICardWidget> {
                           const SizedBox(width: 6),
                           const Text(
                             'Overweight',
-                            style: TextStyle(fontSize: 13, color: Colors.white),
+                            style: TextStyle(fontSize: 13),
                           ),
                         ],
                       );
@@ -164,7 +157,7 @@ class _BMICardWidgetState extends State<BMICardWidget> {
                           const SizedBox(width: 6),
                           const Text(
                             'Obese',
-                            style: TextStyle(fontSize: 13, color: Colors.white),
+                            style: TextStyle(fontSize: 13),
                           ),
                         ],
                       );

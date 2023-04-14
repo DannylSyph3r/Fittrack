@@ -92,7 +92,7 @@ class _CompleteUserProfileScreenState extends State<CompleteUserProfileScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      width: 350,
+                      width: 318,
                       height: 62,
                       decoration: BoxDecoration(
                           color: Colors.grey.shade200,
@@ -135,64 +135,70 @@ class _CompleteUserProfileScreenState extends State<CompleteUserProfileScreen> {
                   ),
                 ),
                 const SizedBox(height: 15),
-                Row(
-                  children: [
-                    SizedBox(
-                      height: 62,
-                      width: 307,
-                      child: AppTextField(
-                        controller: _userBodyWeightController,
-                        hintText: "Your Weight",
-                        obscureText: false,
-                        placeholderIcon: LineIcon.weight(),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        height: 62,
+                        width: 307,
+                        child: AppTextField(
+                          controller: _userBodyWeightController,
+                          hintText: "Your Weight",
+                          obscureText: false,
+                          placeholderIcon: LineIcon.weight(),
+                        ),
                       ),
-                    ),
-                    Container(
-                      height: 62,
-                      width: 62,
-                      // ignore: sort_child_properties_last
-                      child: const Center(child: Text("KG")),
-                      decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(20)),
-                          gradient: LinearGradient(
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight,
-                              colors: [
-                                CustomColors.firstGradientColor,
-                                CustomColors.secondGradientColor
-                              ])),
-                    )
-                  ],
+                      Container(
+                        height: 62,
+                        width: 62,
+                        // ignore: sort_child_properties_last
+                        child: const Center(child: Text("KG")),
+                        decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(20)),
+                            gradient: LinearGradient(
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                                colors: [
+                                  CustomColors.firstGradientColor,
+                                  CustomColors.secondGradientColor
+                                ])),
+                      )
+                    ],
+                  ),
                 ),
                 const SizedBox(height: 15),
-                Row(
-                  children: [
-                    SizedBox(
-                      height: 62,
-                      width: 307,
-                      child: AppTextField(
-                        controller: _userHeightController,
-                        hintText: "Your Height",
-                        obscureText: false,
-                        placeholderIcon: LineIcon.arrowUp(),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        height: 62,
+                        width: 307,
+                        child: AppTextField(
+                          controller: _userHeightController,
+                          hintText: "Your Height",
+                          obscureText: false,
+                          placeholderIcon: LineIcon.arrowUp(),
+                        ),
                       ),
-                    ),
-                    Container(
-                      height: 62,
-                      width: 62,
-                      // ignore: sort_child_properties_last
-                      child: const Center(child: Text("CM")),
-                      decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(20)),
-                          gradient: LinearGradient(
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight,
-                              colors: [
-                                CustomColors.firstGradientColor,
-                                CustomColors.secondGradientColor
-                              ])),
-                    )
-                  ],
+                      Container(
+                        height: 62,
+                        width: 62,
+                        // ignore: sort_child_properties_last
+                        child: const Center(child: Text("CM")),
+                        decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(20)),
+                            gradient: LinearGradient(
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                                colors: [
+                                  CustomColors.firstGradientColor,
+                                  CustomColors.secondGradientColor
+                                ])),
+                      )
+                    ],
+                  ),
                 ),
                 const SizedBox(height: 35),
                 const Text(

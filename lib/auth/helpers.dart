@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:fittrack/screens/complete_profile_screen.dart';
 import 'package:flutter/material.dart';
 
 class AuthService {
@@ -74,6 +73,97 @@ class AuthService {
               content: Text("Password reset link sent! Check your email.."),
             );
           });
+    } on FirebaseAuthException catch (e) {
+      error(context, e.message);
+    }
+  }
+
+  Future<void> recordUserActivityDetails(BuildContext context, String email,
+      workoutDuration, int totalCaloriesBurnt) async {
+    try {
+      // Get a reference to the Firebase collection
+      CollectionReference workoutCollection =
+          FirebaseFirestore.instance.collection('workoutActivityData');
+
+      // Create a map with the workout data
+      Map<String, dynamic> workoutData = {
+        'totalCaloriesBurnt': totalCaloriesBurnt,
+        'workoutDuration': workoutDuration,
+        'isWorkoutCompleted': true,
+        'dateTime': DateTime.now()
+      };
+
+      // Add the workout data to the collection using the user's email address as the document ID
+      await workoutCollection
+          .doc(email)
+          .set(workoutData, SetOptions(merge: true));
+      // ignore: use_build_context_synchronously
+      ScaffoldMessenger.of(context)
+          .showSnackBar(const SnackBar(content: Text('Workout data added')));
+    } on FirebaseAuthException catch (e) {
+      error(context, e.message);
+    }
+  }
+
+  Future updateUserWeight(email, double weight, BuildContext context) async {
+    try {
+      // Get the Firestore document for the user with the given email address
+      final userDoc = await FirebaseFirestore.instance
+          .collection('fittrackUsers')
+          .where('email', isEqualTo: email)
+          .limit(1)
+          .get();
+
+      // Check if a matching user document was found
+      if (userDoc.docs.isNotEmpty) {
+        final userRef = userDoc.docs.first.reference;
+        // Update the weight field of the user document
+        await userRef.update({'weight': weight.toString()});
+
+        // Show a success message to the user
+        // ignore: use_build_context_synchronously
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text("Weight updated Succesfully")),
+        );
+      } else {
+        // If no matching user document was found, show an error message
+        // ignore: use_build_context_synchronously
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Could not find user with email $email')),
+        );
+      }
+    } on FirebaseAuthException catch (e) {
+      error(context, e.message);
+    }
+  }
+
+  Future updateUserHeight(email, double height, BuildContext context) async {
+    try {
+      // Get the Firestore document for the user with the given email address
+      final userDoc = await FirebaseFirestore.instance
+          .collection('fittrackUsers')
+          .where('email', isEqualTo: email)
+          .limit(1)
+          .get();
+
+      // Check if a matching user document was found
+      if (userDoc.docs.isNotEmpty) {
+        final userRef = userDoc.docs.first.reference;
+        // Update the weight field of the user document
+        await userRef.update({'height': height.toString()});
+
+        // Show a success message to the user
+        // ignore: use_build_context_synchronously
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text("Height updated Succesfully")),
+        );
+      } else {
+        // If no matching user document was found, show an error message
+        // ignore: use_build_context_synchronously
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Could not find user with email $email')),
+        );
+      }
     } on FirebaseAuthException catch (e) {
       error(context, e.message);
     }

@@ -1,7 +1,6 @@
 import 'package:fittrack/screens/initialized_screen.dart';
-import 'package:fittrack/utils/onboarding_content.dart';
+import 'package:fittrack/models/onboarding_content.dart';
 import 'package:fittrack/utils/theme_colors.dart';
-import 'package:fittrack/widgets/app_buttons.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingScreens extends StatefulWidget {

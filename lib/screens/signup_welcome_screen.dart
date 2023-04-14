@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fittrack/screens/home_screen_fittrack.dart';
 import 'package:fittrack/widgets/app_buttons.dart';
+import 'package:fittrack/widgets/bottom_navbar.dart';
 import 'package:flutter/material.dart';
 
 class SignUpWelcomeScreen extends StatelessWidget {
@@ -21,8 +22,7 @@ class SignUpWelcomeScreen extends StatelessWidget {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => MainHomeScreen(
-            firstName: firstName,
+          builder: (context) => const FitTrackNavBar(
           ),
         ),
       );

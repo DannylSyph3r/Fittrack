@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fittrack/auth/auth_page.dart';
 import 'package:fittrack/screens/complete_profile_screen.dart';
 import 'package:fittrack/screens/loading_screen.dart';
+import 'package:fittrack/widgets/bottom_navbar.dart';
 import 'package:flutter/material.dart';
 
 import 'home_screen_fittrack.dart';
@@ -40,7 +41,7 @@ class InitializedScreen extends StatelessWidget {
 
                       if (isProfileComplete) {
                         // User's profile is complete, show MainHomeScreen
-                        return MainHomeScreen(firstName: firstName);
+                        return const FitTrackNavBar();
                       } else {
                         // User's profile is not complete, show CompleteUserProfileScreen
                         return const CompleteUserProfileScreen();
