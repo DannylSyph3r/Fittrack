@@ -6,7 +6,6 @@ import 'package:fittrack/widgets/app_icons_buttons.dart';
 import 'package:fittrack/widgets/app_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icon.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class CompleteUserProfileScreen extends StatefulWidget {
   const CompleteUserProfileScreen({super.key});

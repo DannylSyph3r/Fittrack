@@ -294,8 +294,8 @@ class _ExcerciseScreenState extends State<ExcerciseScreen> {
                         );
                       } else {
                         _pageController.nextPage(
-                          duration: const Duration(microseconds: 100),
-                          curve: Curves.bounceIn,
+                          duration: const Duration(microseconds: 400),
+                          curve: Curves.easeIn,
                         );
                       }
                     },

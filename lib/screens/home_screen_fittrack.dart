@@ -138,7 +138,7 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
                                                 Text(
                                                   fullWorkoutScreenExercises
                                                       .name,
-                                                  style: TextStyle(
+                                                  style: const TextStyle(
                                                       fontSize: 16,
                                                       fontWeight:
                                                           FontWeight.bold),
@@ -157,7 +157,7 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
                                                 Text(
                                                   '${fullWorkoutScreenExercises.numExercises.toString()} Exercises',
                                                   style:
-                                                      TextStyle(fontSize: 13),
+                                                      const TextStyle(fontSize: 13),
                                                 ),
                                               ],
                                             ),
@@ -174,7 +174,7 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
                                                   fullWorkoutScreenExercises
                                                       .timeRange,
                                                   style:
-                                                      TextStyle(fontSize: 13),
+                                                      const TextStyle(fontSize: 13),
                                                 )
                                               ],
                                             ),
@@ -342,11 +342,10 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
                                                               'Beginner',
                                                               false);
                                                       int totalCalories = 0;
-                                                      selectedExercises
-                                                          .forEach((exercise) {
+                                                      for (var exercise in selectedExercises) {
                                                         totalCalories += exercise
                                                             .exerciseCalories;
-                                                      });
+                                                      }
                                                       Navigator.push(
                                                           context,
                                                           MaterialPageRoute(
@@ -374,7 +373,7 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
                                                                     .circular(
                                                                         20))),
                                                     child:
-                                                        Text("Start Workout"))
+                                                        const Text("Start Workout"))
                                               ],
                                             )
                                           ]),

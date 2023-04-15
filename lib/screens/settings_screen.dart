@@ -217,10 +217,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             );
                           },
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: CustomColors.buttonColor,
-                              fixedSize: const Size(120, 50),
+                              backgroundColor: Color.fromARGB(255, 86, 110, 231),
+                              fixedSize: const Size(120, 40),
                               shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(25))),
+                                  borderRadius: BorderRadius.circular(18))),
                           child: const Text(
                             "Log Out",
                             style: TextStyle(color: Colors.black),

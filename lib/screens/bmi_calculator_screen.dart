@@ -3,7 +3,6 @@ import 'package:fittrack/utils/bmi_constant.dart';
 import 'package:fittrack/utils/calculate_bmi.dart';
 import 'package:fittrack/utils/theme_colors.dart';
 import 'package:fittrack/widgets/app_buttons.dart';
-import 'package:fittrack/widgets/bottom_button.dart';
 import 'package:fittrack/widgets/icon_content.dart';
 import 'package:fittrack/widgets/reusable_card.dart';
 import 'package:fittrack/widgets/round_icon_button.dart';
@@ -79,7 +78,7 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
                                     ),
                                   ],
                                 ),
-                                IconContent(
+                                const IconContent(
                                   icon: LineIcons.male,
                                   label: 'Male',
                                 ),
@@ -119,7 +118,7 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
                                     ),
                                   ],
                                 ),
-                                IconContent(
+                                const IconContent(
                                   icon: LineIcons.female,
                                   label: 'Female',
                                 ),
@@ -152,7 +151,7 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
                         height.toString(),
                         style: kNumberTextStyle,
                       ),
-                      Text(
+                      const Text(
                         ' cm',
                         style: kLabelTextStyle,
                       )
@@ -160,14 +159,14 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
                   ),
                   SliderTheme(
                     data: SliderTheme.of(context).copyWith(
-                      inactiveTrackColor: Color(0xFF8D8E98),
+                      inactiveTrackColor: const Color(0xFF8D8E98),
                       activeTrackColor: Colors.purple,
                       thumbColor: CustomColors.sliderColor,
-                      overlayColor: Color(0x29EB1555),
+                      overlayColor: const Color(0x29EB1555),
                       thumbShape:
-                          RoundSliderThumbShape(enabledThumbRadius: 15.0),
+                          const RoundSliderThumbShape(enabledThumbRadius: 15.0),
                       overlayShape:
-                          RoundSliderOverlayShape(overlayRadius: 30.0),
+                          const RoundSliderOverlayShape(overlayRadius: 30.0),
                     ),
                     child: Slider(
                       value: height.toDouble(),
@@ -191,7 +190,7 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
                               const SizedBox(
                                 height: 20,
                               ),
-                              Text(
+                              const Text(
                                 'Weight (KG)',
                                 style: metricLabelTextStyle,
                               ),
@@ -209,7 +208,7 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
                                           weight--;
                                         });
                                       }),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 10.0,
                                   ),
                                   RoundIconButton(
@@ -238,7 +237,7 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
                               const SizedBox(
                                 height: 20,
                               ),
-                              Text(
+                              const Text(
                                 'Age',
                                 style: metricLabelTextStyle,
                               ),
@@ -259,7 +258,7 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
                                       );
                                     },
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 10.0,
                                   ),
                                   RoundIconButton(

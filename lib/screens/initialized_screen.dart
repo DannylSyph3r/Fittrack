@@ -6,8 +6,6 @@ import 'package:fittrack/screens/loading_screen.dart';
 import 'package:fittrack/widgets/bottom_navbar.dart';
 import 'package:flutter/material.dart';
 
-import 'home_screen_fittrack.dart';
-
 class InitializedScreen extends StatelessWidget {
   const InitializedScreen({super.key});
 
@@ -37,7 +35,6 @@ class InitializedScreen extends StatelessWidget {
                           as Map<String, dynamic>?;
                       final isProfileComplete =
                           data?['isProfileComplete'] ?? false;
-                      final firstName = data?['firstName'] ?? '';
 
                       if (isProfileComplete) {
                         // User's profile is complete, show MainHomeScreen

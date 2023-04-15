@@ -2,12 +2,11 @@ import 'package:fittrack/utils/bmi_constant.dart';
 import 'package:fittrack/utils/theme_colors.dart';
 import 'package:fittrack/widgets/app_buttons.dart';
 import 'package:fittrack/widgets/bmi_graph.dart';
-import 'package:fittrack/widgets/bottom_button.dart';
 import 'package:fittrack/widgets/reusable_card.dart';
 import 'package:flutter/material.dart';
 
 class ResultsPage extends StatefulWidget {
-  ResultsPage({
+  const ResultsPage({super.key, 
     required this.interpretation,
     required this.bmiResult,
     required this.resultText,
@@ -104,7 +103,7 @@ class _ResultsPageState extends State<ResultsPage> {
                                       : Text(
                                           widget.resultText,
                                           style: kResultTextStyle.copyWith(
-                                              color: Color.fromARGB(255, 255, 17, 0), fontSize: 22),
+                                              color: const Color.fromARGB(255, 255, 17, 0), fontSize: 22),
                                         ),
                           const SizedBox(
                             height: 30,
