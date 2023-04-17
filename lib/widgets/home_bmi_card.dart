@@ -206,7 +206,7 @@ class _BMICardWidgetState extends State<BMICardWidget> {
                     ),
                     child: const Text(
                       "Calculate BMI",
-                      style: TextStyle(fontSize: 12),
+                      style: TextStyle(fontSize: 10),
                     ),
                   ),
                 ],

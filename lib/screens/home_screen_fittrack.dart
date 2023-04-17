@@ -389,10 +389,10 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
                                                 MainAxisAlignment.end,
                                             children: [
                                               CircleAvatar(
-                                                radius: 31,
+                                                radius: 15,
                                                 backgroundColor: Colors.blue,
                                                 backgroundImage: AssetImage(
-                                                    "assets/images/${fullWorkoutScreenExercises.avatarImage}"),
+                                                    "assets/images/${fullWorkoutScreenExercises.avatarImage}",),
                                                 child: const Text(''),
                                               ),
                                             ],

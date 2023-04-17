@@ -15,9 +15,9 @@ class FitTrackNavBar extends StatefulWidget {
 class _FitTrackNavBarState extends State<FitTrackNavBar> {
    int _selectedIndex = 0;
    final List<Widget> _tabs = [
-    MainHomeScreen(),
-    ActivityTrackerScreen(),
-    SettingsScreen()
+    const MainHomeScreen(),
+    const ActivityTrackerScreen(),
+    const SettingsScreen()
   ];
 
   @override

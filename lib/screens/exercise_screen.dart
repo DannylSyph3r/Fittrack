@@ -61,6 +61,11 @@ class _ExcerciseScreenState extends State<ExcerciseScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.exerciseScreenBuilds[currentExercisePageIndex].bodyPartFocus),
+        backgroundColor: CustomColors.appBarColor,
+        elevation: 0,
+        ),
       body: PageView.builder(
         controller: _pageController,
         itemCount: widget.exerciseScreenBuilds.length,
@@ -149,7 +154,7 @@ class _ExcerciseScreenState extends State<ExcerciseScreen> {
                     // ignore: prefer_const_literals_to_create_immutables
                     children: [
                       const Text(
-                        "Reps & Sets",
+                        "Sets & Reps",
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
@@ -278,10 +283,10 @@ class _ExcerciseScreenState extends State<ExcerciseScreen> {
                           Duration.zero,
                           (previousValue, element) => previousValue + element,
                         );
-
+    
                         final formattedDuration =
                             '${totalDuration.inHours}:${(totalDuration.inMinutes % 60).toString().padLeft(2, '0')}:${(totalDuration.inSeconds % 60).toString().padLeft(2, '0')}';
-
+    
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(

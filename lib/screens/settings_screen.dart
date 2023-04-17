@@ -217,7 +217,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             );
                           },
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: Color.fromARGB(255, 86, 110, 231),
+                              backgroundColor: const Color.fromARGB(255, 86, 110, 231),
                               fixedSize: const Size(120, 40),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(18))),

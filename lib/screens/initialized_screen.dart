@@ -45,7 +45,7 @@ class InitializedScreen extends StatelessWidget {
                       }
                     } else {
                       // Still loading profile data, show loading indicator
-                      return Scaffold(
+                      return const Scaffold(
                         body: Center(
                           child: LoadingScreen(),
                         ),
@@ -56,7 +56,7 @@ class InitializedScreen extends StatelessWidget {
               }
             } else {
               // Still loading authentication state, show loading indicator
-              return Scaffold(
+              return const Scaffold(
                 body: Center(
                   child: LoadingScreen(),
                 ),

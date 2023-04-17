@@ -1,23 +1,16 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:fittrack/screens/home_screen_fittrack.dart';
 import 'package:fittrack/widgets/app_buttons.dart';
 import 'package:fittrack/widgets/bottom_navbar.dart';
 import 'package:flutter/material.dart';
 
 class SignUpWelcomeScreen extends StatelessWidget {
-  const SignUpWelcomeScreen({Key? key});
+  const SignUpWelcomeScreen({super.key,});
 
   void goToHomeScreen(BuildContext context) async {
     final User? user = FirebaseAuth.instance.currentUser;
 
     if (user != null) {
-      final QuerySnapshot userQuery = await FirebaseFirestore.instance
-          .collection('fittrackUsers')
-          .where('email', isEqualTo: user.email)
-          .get();
-      final DocumentSnapshot userDoc = userQuery.docs.first;
-      final String firstName = userDoc['firstname'];
       // ignore: use_build_context_synchronously
       Navigator.push(
         context,

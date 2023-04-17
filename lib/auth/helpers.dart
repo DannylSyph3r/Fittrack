@@ -31,6 +31,7 @@ class AuthService {
         'firstname': firstname,
         'lastname': lastname,
         'email': email,
+        'date_created': DateTime.now()
       });
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(

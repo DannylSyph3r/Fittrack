@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 class MetricChangeTextField extends StatelessWidget {
+  // ignore: prefer_typing_uninitialized_variables
   final controller;
   final String hintText;
   final bool obscureText;
   final Icon placeholderIcon;
+  // ignore: prefer_typing_uninitialized_variables
   final keyboardType;
 
   const MetricChangeTextField({
@@ -30,7 +32,7 @@ class MetricChangeTextField extends StatelessWidget {
             child: placeholderIcon,
             ),
             enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.white),
+              borderSide: const BorderSide(color: Colors.white),
               borderRadius: BorderRadius.circular(20),
             ),
             focusedBorder: OutlineInputBorder(
