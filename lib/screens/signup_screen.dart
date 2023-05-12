@@ -1,5 +1,6 @@
 import 'package:fittrack/auth/helpers.dart';
 import 'package:fittrack/widgets/app_buttons.dart';
+import 'package:fittrack/widgets/app_password_textfield.dart';
 import 'package:fittrack/widgets/app_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icon.dart';
@@ -19,6 +20,7 @@ class _UserSignUpScreenState extends State<UserSignUpScreen> {
   final _firstNameController = TextEditingController();
   final _lastNameController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
+  final bool _isRegisterPasswordVisible = false;
 
   @override
   void dispose() {
@@ -80,17 +82,17 @@ class _UserSignUpScreenState extends State<UserSignUpScreen> {
                   placeholderIcon: LineIcon.envelope(),
                 ),
                 const SizedBox(height: 10),
-                AppTextField(
+                AppPasswordTextField(
                   controller: _signUppasswordController,
                   hintText: "Password",
-                  obscureText: true,
+                  obscureText: _isRegisterPasswordVisible,
                   placeholderIcon: LineIcon.lock(),
                 ),
                 const SizedBox(height: 10),
-                AppTextField(
+                AppPasswordTextField(
                   controller: _confirmPasswordController,
                   hintText: "Confirm Password",
-                  obscureText: true,
+                  obscureText: !_isRegisterPasswordVisible,
                   placeholderIcon: LineIcon.lock(),
                 ),
                 const SizedBox(height: 70),

@@ -74,9 +74,7 @@ class _TodayTotalWorkoutsStreamState extends State<TodayTotalWorkoutsStream> {
         final startOfToday = DateTime(today.year, today.month, today.day);
         final endOfToday =
             DateTime(today.year, today.month, today.day, 23, 59, 59);
-        print(startOfToday);
-        print(endOfToday);
-
+            
         final todayWorkouts = snapshot.data?.where((workout) {
           final dateTime = (workout['dateTime'] as Timestamp).toDate();
           return dateTime.isAfter(startOfToday) &&

@@ -31,7 +31,6 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
                     children: [
                       const SizedBox(height: 40),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -71,29 +70,17 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
                               ),
                             ],
                           ),
-                          Column(
-                            children: [
-                              Container(
-                                height: 45,
-                                width: 45,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(12),
-                                    color: Colors.grey.shade300),
-                                child: IconButton(
-                                    onPressed: () {},
-                                    icon: const Icon(LineIcons.bell)),
-                              )
-                            ],
-                          ),
                         ],
                       ),
                       const SizedBox(height: 20),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         // ignore: prefer_const_literals_to_create_immutables
                         children: [
                           const Text(
                             "FitTrack Workouts",
                             style: TextStyle(fontSize: 16),
+                            textAlign: TextAlign.center,
                           ),
                         ],
                       ),

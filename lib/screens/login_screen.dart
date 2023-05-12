@@ -1,6 +1,7 @@
 import 'package:fittrack/auth/helpers.dart';
 import 'package:fittrack/screens/forgot_password_screen.dart';
 import 'package:fittrack/widgets/app_icons_buttons.dart';
+import 'package:fittrack/widgets/app_password_textfield.dart';
 import 'package:fittrack/widgets/app_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icon.dart';
@@ -16,6 +17,7 @@ class UserLoginScreen extends StatefulWidget {
 class _UserLoginScreenState extends State<UserLoginScreen> {
   AuthService authenticationService = AuthService();
   bool isLoginButtonActive = false;
+  final bool _isPasswordVisible = false;
   final _signInemailAddressController = TextEditingController();
   final _signInpasswordController = TextEditingController();  
 
@@ -60,11 +62,11 @@ class _UserLoginScreenState extends State<UserLoginScreen> {
                 obscureText: false,
               ),
                 const SizedBox(height: 10),
-              AppTextField(
+              AppPasswordTextField(
                 placeholderIcon: LineIcon.lock(),
                 controller: _signInpasswordController,
                 hintText: 'Password',
-                obscureText: true,
+                obscureText: !_isPasswordVisible, 
               ),
               const SizedBox(height: 15),
               Padding(

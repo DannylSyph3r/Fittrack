@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fittrack/auth/helpers.dart';
+import 'package:fittrack/screens/about_fittrack_screen.dart';
 import 'package:fittrack/screens/initialized_screen.dart';
 import 'package:fittrack/utils/theme_colors.dart';
 import 'package:fittrack/widgets/about_fittrack_button.dart';
@@ -217,7 +218,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             );
                           },
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color.fromARGB(255, 86, 110, 231),
+                              backgroundColor:
+                                  const Color.fromARGB(255, 86, 110, 231),
                               fixedSize: const Size(120, 40),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(18))),
@@ -533,7 +535,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 const SizedBox(
                   height: 15,
                 ),
-                const AboutFittrackButton(),
+                GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const AboutFittrackScreen()));
+                    },
+                    child: const AboutFittrackButton()),
                 const SizedBox(
                   height: 30,
                 ),

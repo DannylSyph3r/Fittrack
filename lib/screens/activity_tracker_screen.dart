@@ -153,7 +153,7 @@ class _ActivityTrackerScreenState extends State<ActivityTrackerScreen> {
                 ),
                 Row(
                   children: const [
-                    Icon(LineIcons.search),
+                    Icon(LineIcons.calendar),
                     SizedBox(
                       width: 4,
                     ),
